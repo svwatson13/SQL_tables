@@ -17,3 +17,9 @@
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID));
     ```
 - insert data: insert into table name (column name,       column name) values (value1, value2)
+
+#Gross total and net total
+- select unitprice, quantity, discount,
+  unitprice * Quantity as 'Gross Total',
+  unitprice * quantity * (1- discount) as 'Net Total'
+  from [Order Details]
