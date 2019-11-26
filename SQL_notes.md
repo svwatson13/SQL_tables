@@ -23,3 +23,24 @@
   unitprice * Quantity as 'Gross Total',
   unitprice * quantity * (1- discount) as 'Net Total'
   from [Order Details]
+
+#CHARINDEX
+- SELECT column name as "alias" from products where CHARINDEX('what you are looking for', "columnname")
+- example looking for single aposrophes:
+  SELECT productname as "single quote" from products where CHARINDEX('''', "ProductName") > 0
+#Datediff
+- datediff(measurement,dob,GETDATE()) as alias from table
+- example datediff(year,BirthDate,GETDATE()) as BirthDate from employees
+#Making new column
+- CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END as 'new column name';
+- example:
+CASE
+    WHEN (datediff(year,BirthDate,GETDATE())) >65 THEN 'Retired'
+    WHEN (datediff(year,BirthDate,GETDATE())) >60 THEN 'Retirement Plan'
+    ELSE 'More than 5 years to go'
+END as 'Retirement Plan'
