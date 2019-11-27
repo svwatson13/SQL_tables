@@ -1,4 +1,6 @@
 # SQL
+# comment out one line = -
+# comment out multiple lines = /*/*
 ## Creating tables
 ### Key commands
 - create table table name (column name, column name)
@@ -75,7 +77,7 @@ order by 'AVG order' desc
 - full join returns all matching records from both tables whether the other table matches or not. EVERYTHANG
 - example
 select * from table
-join on lefttablecolumnname, rightcolumnname
+join table on lefttablecolumnname, rightcolumnname
 
 ### Subqueries
 - most common in where
