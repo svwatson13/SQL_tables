@@ -19,7 +19,7 @@
     ```
 - insert data: insert into table name (column name,       column name) values (value1, value2)
 
-## Selecting data from tables
+## Querying tables
 
 #### Gross total and net total
 - select unitprice, quantity, discount,
@@ -49,24 +49,17 @@ CASE
 END as 'Retirement Plan'
 from table;
 
-#Big sums
+#### Big sums
 - select
 sum(column) as 'Total on Order',
 avg(column) as 'AVG on Order',
 max(column) as 'Max on Order',
 min(column) as 'min on Order'
+group by column 2
+having max(column1)
 from table
 - example
 select CategoryID , avg(ReorderLevel) as 'AVG order'
 from products
 group by categoryID
 order by 'AVG order' desc
-
-- select column 2,
-sum(column1) as 'Total on Order',
-avg(column1) as 'AVG on Order',
-max(column1) as 'Max on Order',
-min(column1) as 'min on Order'
-from table
-group by column 2
-having max(column1)
