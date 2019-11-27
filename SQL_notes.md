@@ -34,6 +34,10 @@
 #### Datediff
 - datediff(measurement,dob,GETDATE()) as alias from table
 - example datediff(year,BirthDate,GETDATE()) as BirthDate from employees
+- format date: format(datecolumnname,'dd/mm/yyyy')
+- example:
+select orderid, format(orderdate,'dd/mm/yyyy'), orderdate
+from orders;
 #### Making new column
 - CASE
     WHEN condition1 THEN result1
@@ -63,3 +67,30 @@ select CategoryID , avg(ReorderLevel) as 'AVG order'
 from products
 group by categoryID
 order by 'AVG order' desc
+
+### JOIN
+- join command automatically inner join - combines tables but matching columns are only listed once
+- left join or left outer join returns all rows from left table and matched rows from right table but none extras from right
+- right join or right outer join is same as left but opposite
+- full join returns all matching records from both tables whether the other table matches or not. EVERYTHANG
+- example
+select * from table
+join on lefttablecolumnname, rightcolumnname
+
+### Subqueries
+- most common in where
+- example where trying to find all products with quantity over 100
+```
+SELECT ProductName
+  FROM Product
+ WHERE Id IN (SELECT ProductId
+                FROM OrderItem
+               WHERE Quantity > 100)
+```
+- also used in extra select statements
+```
+select orderid, productid, unitprice, quantity, discount,
+	(select max(unitprice) from [Order Details]) as 'max price',
+	(select avg(unitprice) from [Order Details]) as 'AVG price'
+from [Order Details]
+```
