@@ -1,9 +1,10 @@
 # SQL
-# comment out one line = -
-# comment out multiple lines = "/*/*"
+## comment out one line = -
+## comment out multiple lines = /*/*
 ## Creating tables
 ### Key commands
 - create table table name (column name, column name)
+- 'identity' after column data type makes an auto-cremented ID
 - add column: alter table table name add column name
 - update table:
 -- UPDATE table_name
@@ -13,10 +14,9 @@
 -   PK & FK: manual = designer -> relationships but code below
     CREATE TABLE orders
     ```
-    (OrderID int NOT NULL,
+    (OrderID int NOT NULL IDENTITY PRIMARY KEY,
     OrderNumber int NOT NULL,
     PersonID int,
-    PRIMARY KEY (OrderID),
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID));
     ```
 - insert data: insert into table name (column name,       column name) values (value1, value2)
