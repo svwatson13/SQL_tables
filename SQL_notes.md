@@ -1,6 +1,6 @@
 # SQL
 # comment out one line = -
-# comment out multiple lines = /*/*
+# comment out multiple lines = "/*/*"
 ## Creating tables
 ### Key commands
 - create table table name (column name, column name)
