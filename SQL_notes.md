@@ -55,6 +55,10 @@ CASE
 END as 'Retirement Plan'
 from table;
 
+#### Resetting IDENTITY:
+DBCC CHECKIDENT (Flights, RESEED, 0);
+GO
+
 #### Big sums
 - select
 sum(column) as 'Total on Order',
